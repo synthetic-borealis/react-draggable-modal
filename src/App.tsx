@@ -12,6 +12,6 @@ const App: React.FC = function() {
       </Modal>
     </div>
   );
-}
+};
 
 export default App;

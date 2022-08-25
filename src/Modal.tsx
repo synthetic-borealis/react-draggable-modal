@@ -5,7 +5,7 @@ interface IModalProps {
   children?: JSX.Element | JSX.Element[];
 }
 
-const Modal: React.FC<IModalProps> = function (props: IModalProps) {
+const Modal: React.FC<IModalProps> = function(props: IModalProps) {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const minOnscreenWidth = 20;
   const minOnscreenHeight = 40;
