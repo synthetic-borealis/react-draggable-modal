@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import './Modal.css';
 
 interface IModalProps {
-  children?: JSX.Element | JSX.Element[];
+  children?: ReactNode;
 }
 
-const Modal: React.FC<IModalProps> = function(props: IModalProps) {
+export default function Modal({ children }: IModalProps) {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const minOnscreenWidth = 20;
   const minOnscreenHeight = 40;
@@ -57,11 +58,18 @@ const Modal: React.FC<IModalProps> = function(props: IModalProps) {
   }
 
   return (
-    <div className="Modal" onPointerDown={handlePointerDown} onPointerUp={handlePointerUp}
-         onPointerLeave={handlePointerLeave} onMouseMove={handlePointerMovement}>
-      {props.children}
+    <div
+      className="Modal"
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerLeave}
+      onMouseMove={handlePointerMovement}
+    >
+      {children}
     </div>
   );
-};
+}
 
-export default Modal;
+Modal.defaultProps = {
+  children: PropTypes.node,
+};

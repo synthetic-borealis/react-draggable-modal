@@ -5,15 +5,18 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "start": "vite --open",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .tsx,.ts,.jsx,.js src/"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@types/prop-types": "^15.7.5",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "5.33.0",
